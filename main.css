@@ -1,47 +1,226 @@
+/* --- الألوان الصحراوية المستوحاة من الشعار --- */
 :root {
-    --bg-black: #0a0a0a;
-    --grey-dark: #1a1a1a;
-    --grey-med: #333333;
-    --grey-light: #888888;
-    --metallic: #d1d1d1;
+    --bg-dark: #221a11;          /* أسود صحراوي */
+    --desert-gold: #c69466;       /* ذهبي صحراوي (لون الخط الرئيسي في الشعار) */
+    --desert-copper: #8e6241;     /* نحاسي/برونزي (لون الدلة) */
+    --desert-sand: #e6c5a0;       /* بيج رملي (لون الخلفية الفاتحة) */
+    --desert-deep: #16110b;       /* أسود أعمق */
     --white: #ffffff;
+    --grey-med: #4a3e30;          /* رمادي صحراوي للحدود */
+    --shadow: rgba(0, 0, 0, 0.4);
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', sans-serif; }
-body { background-color: var(--bg-black); color: var(--white); scroll-behavior: smooth; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif;
+}
 
-/* Navbar */
-.navbar { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 8%; background: rgba(10,10,10,0.95); position: fixed; width: 100%; z-index: 1000; border-bottom: 1px solid var(--grey-med); }
-.logo { font-size: 1.6rem; font-weight: 900; }
-.accent { color: var(--grey-light); }
-.nav-links { display: flex; list-style: none; }
-.nav-links li { margin-right: 20px; }
-.nav-links a { text-decoration: none; color: var(--grey-light); font-weight: 600; font-size: 0.85rem; transition: 0.3s; }
-.nav-links a:hover { color: var(--white); }
-.btn-join { background: var(--white); color: var(--bg-black) !important; padding: 8px 18px; border-radius: 4px; font-weight: 900; }
+body {
+    background-color: var(--bg-dark);
+    color: var(--white);
+    scroll-behavior: smooth;
+    direction: rtl;
+}
 
-/* Hero */
-.hero { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; background: radial-gradient(circle, #222 0%, #0a0a0a 100%); }
-.main-logo { width: 150px; border-radius: 50%; border: 2px solid var(--grey-med); margin-bottom: 25px; filter: grayscale(100%); }
-.hero h1 { font-size: 3.5rem; font-weight: 900; margin-bottom: 10px; color: var(--metallic); }
-.hero p { color: var(--grey-light); margin-bottom: 30px; }
+/* --- القائمة العلوية --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 8%;
+    background: rgba(34, 26, 17, 0.95); /* خلفية داكنة */
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 2px solid var(--desert-copper); /* حدود نحاسية */
+}
 
-.primary-btn { padding: 12px 35px; text-decoration: none; border-radius: 4px; font-weight: 700; background: var(--metallic); color: var(--bg-black); transition: 0.3s; }
-.primary-btn:hover { background: var(--white); transform: scale(1.05); }
+.logo {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: var(--desert-gold); /* لون ذهبي صحراوي */
+}
 
-/* Staff Grid - Grey Style */
-.section { padding: 80px 10%; }
-.staff-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; max-width: 1100px; margin: 0 auto; }
-.staff-card { background: var(--grey-dark); padding: 20px; border: 1px solid var(--grey-med); text-align: center; transition: 0.3s; border-radius: 4px; }
-.staff-card:hover { border-color: var(--white); background: #222; }
-.staff-card.highlight { border-color: var(--grey-light); border-width: 2px; }
-.staff-card h3 { font-size: 1.1rem; margin-bottom: 5px; color: var(--metallic); }
-.role { color: var(--grey-light); font-weight: 700; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 1px; }
+.accent {
+    color: var(--desert-sand); /* لون رملي */
+}
 
-/* Rules */
-.dark-bg { background: #070707; }
-.section-title { text-align: center; margin-bottom: 50px; font-size: 2rem; font-weight: 900; color: var(--metallic); }
-.list-item { background: var(--grey-dark); padding: 15px; margin-bottom: 10px; border-right: 4px solid var(--grey-med); font-size: 0.9rem; transition: 0.3s; }
-.list-item:hover { border-right-color: var(--white); padding-right: 25px; }
+.nav-links {
+    display: flex;
+    list-style: none;
+}
 
-footer { text-align: center; padding: 50px; color: #333; font-size: 0.8rem; }
+.nav-links li {
+    margin-right: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--desert-sand);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--desert-gold);
+}
+
+.btn-join {
+    background: var(--desert-gold); /* لون ذهبي صحراوي */
+    color: var(--bg-dark) !important;
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-weight: 900;
+    transition: 0.3s;
+}
+
+.btn-join:hover {
+    background: var(--desert-sand);
+}
+
+/* --- الواجهة الرئيسية --- */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* خلفية متدرجة صحراوية */
+    background: radial-gradient(circle, var(--grey-med) 0%, var(--bg-dark) 100%);
+    color: var(--white);
+}
+
+.main-logo {
+    width: 160px;
+    border-radius: 50%;
+    border: 5px solid var(--desert-copper); /* حدود نحاسية */
+    box-shadow: 0 0 15px var(--shadow);
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+    color: var(--desert-gold); /* لون ذهبي صحراوي */
+}
+
+.hero p {
+    color: var(--desert-sand);
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.primary-btn {
+    padding: 12px 35px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 700;
+    background: var(--desert-copper); /* لون نحاسي/برونزي */
+    color: var(--bg-dark);
+    transition: 0.3s;
+    font-size: 1.1rem;
+}
+
+.primary-btn:hover {
+    background: var(--desert-gold);
+    transform: scale(1.05);
+}
+
+/* --- الأقسام --- */
+.section {
+    padding: 100px 10%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--desert-gold); /* لون ذهبي صحراوي */
+}
+
+/* --- طاقم الإدارة --- */
+.staff-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.staff-card {
+    background: var(--grey-med); /* رمادي صحراوي */
+    padding: 30px;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    text-align: center;
+    transition: 0.3s;
+    color: var(--desert-sand);
+}
+
+.staff-card:hover {
+    border-color: var(--desert-gold); /* لون ذهبي عند المرور */
+    transform: translateY(-5px);
+    background: var(--bg-dark);
+}
+
+.staff-card.highlight {
+    border-color: var(--desert-gold); /* حدود ذهبية صحراوية */
+}
+
+.staff-card h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.role {
+    color: var(--desert-copper); /* لون نحاسي صحراوي */
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+/* --- القوانين --- */
+.dark-bg {
+    background: var(--desert-deep); /* أسود أعمق */
+}
+
+.rules-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.list-item {
+    background: var(--grey-med); /* رمادي صحراوي */
+    padding: 20px;
+    margin-bottom: 15px;
+    border-right: 5px solid var(--desert-copper); /* حدود نحاسية */
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: 0.3s;
+    color: var(--desert-sand);
+}
+
+.list-item:hover {
+    background: var(--grey-border); /* تدرج داكن */
+    transform: translateX(-5px);
+}
+
+/* --- التذييل --- */
+footer {
+    text-align: center;
+    padding: 60px;
+    background: var(--desert-deep); /* أسود أعمق */
+    color: var(--desert-sand);
+    font-size: 0.85rem;
+}
+
+footer p {
+    color: var(--grey-med);
+}
