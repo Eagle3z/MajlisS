@@ -1,226 +1,48 @@
-/* --- الألوان الصحراوية المستوحاة من الشعار --- */
 :root {
-    --bg-dark: #221a11;          /* أسود صحراوي */
-    --desert-gold: #c69466;       /* ذهبي صحراوي (لون الخط الرئيسي في الشعار) */
-    --desert-copper: #8e6241;     /* نحاسي/برونزي (لون الدلة) */
-    --desert-sand: #e6c5a0;       /* بيج رملي (لون الخلفية الفاتحة) */
-    --desert-deep: #16110b;       /* أسود أعمق */
-    --white: #ffffff;
-    --grey-med: #4a3e30;          /* رمادي صحراوي للحدود */
-    --shadow: rgba(0, 0, 0, 0.4);
+    --desert-sand: #e6c5a0;    /* لون الرمل الفاتح */
+    --desert-gold: #c69466;    /* لون شعار سينك الذهبي */
+    --desert-brown: #5d4037;   /* لون القهوة الداكن */
+    --desert-copper: #8e6241;  /* لون الدلة النحاسي */
+    --off-white: #f5f5f5;
+    --text-dark: #3e2723;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Cairo', sans-serif;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', sans-serif; }
+body { background-color: var(--desert-sand); color: var(--text-dark); scroll-behavior: smooth; }
 
-body {
-    background-color: var(--bg-dark);
-    color: var(--white);
-    scroll-behavior: smooth;
-    direction: rtl;
-}
+/* Navbar */
+.navbar { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 8%; background: var(--desert-brown); position: fixed; width: 100%; z-index: 1000; border-bottom: 3px solid var(--desert-gold); }
+.logo { font-size: 1.6rem; font-weight: 900; color: var(--off-white); }
+.accent { color: var(--desert-gold); }
+.nav-links { display: flex; list-style: none; }
+.nav-links li { margin-right: 25px; }
+.nav-links a { text-decoration: none; color: var(--desert-sand); font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
+.nav-links a:hover { color: var(--off-white); }
+.btn-join { background: var(--desert-gold); color: var(--off-white) !important; padding: 8px 18px; border-radius: 4px; font-weight: 900; }
 
-/* --- القائمة العلوية --- */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 8%;
-    background: rgba(34, 26, 17, 0.95); /* خلفية داكنة */
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
-    border-bottom: 2px solid var(--desert-copper); /* حدود نحاسية */
-}
+/* Hero */
+.hero { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(to bottom, var(--desert-sand), #d7b38c); }
+.main-logo { width: 170px; border-radius: 50%; border: 4px solid var(--desert-brown); margin-bottom: 25px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+.hero h1 { font-size: 4rem; font-weight: 900; margin-bottom: 10px; color: var(--desert-brown); }
+.hero p { color: var(--desert-copper); font-size: 1.2rem; margin-bottom: 30px; font-weight: 700; }
 
-.logo {
-    font-size: 1.6rem;
-    font-weight: 900;
-    color: var(--desert-gold); /* لون ذهبي صحراوي */
-}
+.primary-btn { padding: 14px 40px; text-decoration: none; border-radius: 4px; font-weight: 700; background: var(--desert-brown); color: var(--off-white); transition: 0.3s; }
+.primary-btn:hover { background: var(--desert-copper); transform: translateY(-3px); }
 
-.accent {
-    color: var(--desert-sand); /* لون رملي */
-}
+/* Staff Section */
+.section { padding: 100px 10%; }
+.staff-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; max-width: 1100px; margin: 0 auto; }
+.staff-card { background: var(--off-white); padding: 30px; border-radius: 8px; border: 1px solid var(--desert-gold); text-align: center; transition: 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+.staff-card:hover { transform: translateY(-5px); box-shadow: 0 8px 15px rgba(0,0,0,0.1); }
+.staff-card h3 { font-size: 1.3rem; margin-bottom: 5px; color: var(--desert-brown); }
+.role { color: var(--desert-copper); font-weight: 900; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
+.highlight { background: #fffcf5; border-width: 2px; }
 
-.nav-links {
-    display: flex;
-    list-style: none;
-}
+/* Rules Section */
+.sandy-bg { background: #dfba92; }
+.section-title { text-align: center; margin-bottom: 50px; font-size: 2.3rem; font-weight: 900; color: var(--desert-brown); }
+.rules-list { max-width: 800px; margin: 0 auto; }
+.list-item { background: var(--off-white); padding: 20px; margin-bottom: 12px; border-right: 6px solid var(--desert-brown); border-radius: 4px; font-size: 1rem; color: var(--text-dark); transition: 0.3s; }
+.list-item:hover { transform: scale(1.02); }
 
-.nav-links li {
-    margin-right: 25px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: var(--desert-sand);
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: 0.3s;
-}
-
-.nav-links a:hover {
-    color: var(--desert-gold);
-}
-
-.btn-join {
-    background: var(--desert-gold); /* لون ذهبي صحراوي */
-    color: var(--bg-dark) !important;
-    padding: 8px 20px;
-    border-radius: 5px;
-    font-weight: 900;
-    transition: 0.3s;
-}
-
-.btn-join:hover {
-    background: var(--desert-sand);
-}
-
-/* --- الواجهة الرئيسية --- */
-.hero {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    /* خلفية متدرجة صحراوية */
-    background: radial-gradient(circle, var(--grey-med) 0%, var(--bg-dark) 100%);
-    color: var(--white);
-}
-
-.main-logo {
-    width: 160px;
-    border-radius: 50%;
-    border: 5px solid var(--desert-copper); /* حدود نحاسية */
-    box-shadow: 0 0 15px var(--shadow);
-    margin-bottom: 25px;
-}
-
-.hero h1 {
-    font-size: 3.5rem;
-    font-weight: 900;
-    margin-bottom: 10px;
-    color: var(--desert-gold); /* لون ذهبي صحراوي */
-}
-
-.hero p {
-    color: var(--desert-sand);
-    font-size: 1.1rem;
-    margin-bottom: 30px;
-}
-
-.primary-btn {
-    padding: 12px 35px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: 700;
-    background: var(--desert-copper); /* لون نحاسي/برونزي */
-    color: var(--bg-dark);
-    transition: 0.3s;
-    font-size: 1.1rem;
-}
-
-.primary-btn:hover {
-    background: var(--desert-gold);
-    transform: scale(1.05);
-}
-
-/* --- الأقسام --- */
-.section {
-    padding: 100px 10%;
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 60px;
-    font-size: 2.2rem;
-    font-weight: 900;
-    color: var(--desert-gold); /* لون ذهبي صحراوي */
-}
-
-/* --- طاقم الإدارة --- */
-.staff-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-.staff-card {
-    background: var(--grey-med); /* رمادي صحراوي */
-    padding: 30px;
-    border-radius: 8px;
-    border: 2px solid transparent;
-    text-align: center;
-    transition: 0.3s;
-    color: var(--desert-sand);
-}
-
-.staff-card:hover {
-    border-color: var(--desert-gold); /* لون ذهبي عند المرور */
-    transform: translateY(-5px);
-    background: var(--bg-dark);
-}
-
-.staff-card.highlight {
-    border-color: var(--desert-gold); /* حدود ذهبية صحراوية */
-}
-
-.staff-card h3 {
-    font-size: 1.3rem;
-    font-weight: 700;
-    margin-bottom: 5px;
-}
-
-.role {
-    color: var(--desert-copper); /* لون نحاسي صحراوي */
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    letter-spacing: 1px;
-}
-
-/* --- القوانين --- */
-.dark-bg {
-    background: var(--desert-deep); /* أسود أعمق */
-}
-
-.rules-list {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.list-item {
-    background: var(--grey-med); /* رمادي صحراوي */
-    padding: 20px;
-    margin-bottom: 15px;
-    border-right: 5px solid var(--desert-copper); /* حدود نحاسية */
-    border-radius: 5px;
-    font-size: 1rem;
-    transition: 0.3s;
-    color: var(--desert-sand);
-}
-
-.list-item:hover {
-    background: var(--grey-border); /* تدرج داكن */
-    transform: translateX(-5px);
-}
-
-/* --- التذييل --- */
-footer {
-    text-align: center;
-    padding: 60px;
-    background: var(--desert-deep); /* أسود أعمق */
-    color: var(--desert-sand);
-    font-size: 0.85rem;
-}
-
-footer p {
-    color: var(--grey-med);
-}
+footer { text-align: center; padding: 50px; color: var(--desert-copper); font-weight: 700; }
